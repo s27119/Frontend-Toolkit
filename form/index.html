@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <form class="registration-form" id="form" novalidate>
+        <h2>Rejestracja</h2>
+        <div class="field-control">
+          <label for="username">Nazwa użytkownika</label>
+          <input
+            id="username" maxlength="35" minlength="4" placeholder="Wpisz nazwę użytkownika"
+            type="text">
+          <span> </span>
+        </div>
+        <div class="field-control">
+          <label for="email">Email</label>
+          <input
+            id="email" placeholder="Wpisz email"
+            type="email">
+          <span> </span>
+        </div>
+
+        <div class="field-control">
+          <label for="password">Hasło</label>
+          <input
+            id="password" placeholder="Wpisz hasło"
+            type="password">
+          <span> </span>
+        </div>
+
+        <div class="field-control">
+          <label for="password-confirmation">Hasło ponownie</label>
+          <input
+            id="password-confirmation"
+            placeholder="Wpisz hasło ponownie"
+            type="password">
+          <span> </span>
+        </div>
+
+        <button class="register-button" type="submit">Zarejestruj się</button>
+      </form>
+    </div>
+
+    <script src="app.js" type="module"></script>
+    <script src="FormValidator.js"></script>
+    <script src="FieldValidator.js"></script>
+  </body>
+</html>
