@@ -1,7 +1,7 @@
 :root {
     --color-body: #C1BDBA;
     --color-validation-success: #2ECC72;
-    --color-validation-failed: #E75C4C;
+    --color-validation-fail: #E75C4C;
     --color-form: #A0B3B0;
     --color-form-background: #24333C;
     --color-text: #FFF;
@@ -68,13 +68,13 @@ h2 {
     border-color: var(--color-validation-success);
 }
 
-.field-control input.validation-failed {
-    border-color: var(--color-validation-failed);
+.field-control input.validation-fail {
+    border-color: var(--color-validation-fail);
 }
 
 .field-control span {
     display: inline-block;
-    color: var(--color-validation-failed);
+    color: var(--color-validation-fail);
     visibility: hidden;
 }
 
@@ -82,8 +82,8 @@ h2 {
     color: var(--color-validation-success);
 }
 
-.field-control span.validation-failed {
-    color: var(--color-validation-failed);
+.field-control span.validation-fail {
+    color: var(--color-validation-fail);
     visibility: visible;
 }
 
@@ -102,4 +102,9 @@ h2 {
 
 .register-button:hover, .register-button:focus {
     background: #179B77;
+}
+.register-button:disabled {
+    background-color: #ccc;
+    border-color: #999;
+    cursor: not-allowed;
 }
