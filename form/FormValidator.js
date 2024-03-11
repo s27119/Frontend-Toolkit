@@ -14,8 +14,8 @@ class FormValidator {
         });
     }
 
-    addFormField = (cssSelector, options) => {
-        const fieldValidator = new FieldValidator(cssSelector, options);
+    addFormField = (cssSelector) => {
+        const fieldValidator = new FieldValidator(cssSelector);
         this.formFields.push(fieldValidator);
     }
 

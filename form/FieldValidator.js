@@ -4,7 +4,6 @@ class FieldValidator {
     constructor(formFieldSelector, errorMsgSelector) {
         this.formField = document.querySelector(formFieldSelector);
         this.fieldId = this.formField.id;
-        this.passwordField = document.querySelector('#password');
         if (!errorMsgSelector) errorMsgSelector = `${formFieldSelector} + span`;
         this.validationMessage = document.querySelector(errorMsgSelector);
     }
@@ -14,7 +13,7 @@ class FieldValidator {
             "username": this.validateUsername,
             "email": this.validateEmail,
             "password": this.validatePassword,
-            "password-confirmation": this.validatePasswordConfirmation
+            "password-confirmation": () => this.validatePasswordConfirmation('#password')
         };
 
         return validators[this.fieldId] ? this.validateField(validators[this.fieldId]) : false;
@@ -51,9 +50,11 @@ class FieldValidator {
         }
     }
 
-    validatePasswordConfirmation = () => {
+
+    validatePasswordConfirmation = (passwordFieldSelector) => {
         const passwordConfirmation = this.formField.value;
-        const password = this.passwordField.value;
+        const passwordField = document.querySelector(passwordFieldSelector);
+        const password = passwordField.value;
         if (password === passwordConfirmation) {
             this.validationSuccess();
             return true;
